@@ -1,10 +1,13 @@
 package HospitalFactory;
 
 import hospitalData.Patient;
+import hospitalData.ResidenceCard;
+import hospitalData.Speciality;
 
 import java.util.Scanner;
 
 public class PatientService {
+
     public Patient createPatient(String name, String security_number, String address, int age)
     {
         return new Patient(name, security_number, address, age);

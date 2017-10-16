@@ -2,6 +2,7 @@ package com.hopital;
 
 import HospitalFactory.Hospital;
 import HospitalFactory.PatientService;
+import HospitalFactory.ResidenceCardService;
 import hospitalData.Patient;
 
 import java.util.Scanner;
@@ -18,8 +19,13 @@ public class Main {
             System.out.println("Le super patient " + str);
             if (!hospital.checkIfPatientAlreadyExists(str))
                 hospital.addPatient(patientService.registerNewPatient());
-            else
-                System.out.println("Le patient existe");
+            setUpResidenceCard(hospital, hospital.getPatientByName(str));
         }
+    }
+    private static boolean setUpResidenceCard(Hospital hospital, Patient patient)
+    {
+        ResidenceCardService residenceCardService = new ResidenceCardService();
+        patient.setResidenceCard(residenceCardService.setUpResidenceCard(hospital));
+        return (residenceCardService == null);
     }
 }

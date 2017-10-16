@@ -16,6 +16,12 @@ public class ResidenceCard {
         it = specialityList.iterator();
     }
 
+    public ResidenceCard(String entry_date){
+        this.specialityList = new ArrayList<>();
+        this.entry_date = entry_date;
+        it = specialityList.iterator();
+    }
+
     public boolean hasAnotherConsultation()
     {
         return it.hasNext();
@@ -27,4 +33,8 @@ public class ResidenceCard {
             return speciality;
     }
 
+    public boolean addSpeciality(String name)
+    {
+        return this.specialityList.add(name);
+    }
 }
