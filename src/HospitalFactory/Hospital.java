@@ -28,7 +28,7 @@ public class Hospital {
                 new ArrayList<String>(Arrays.asList(names4))));
 
         this.patients = new HashMap<>();
-        this.hospitalDataBase = new HospitalDataBase(patients, specialities);
+/*        this.hospitalDataBase = new HospitalDataBase(patients, specialities);*/
     }
 
     public Patient createPatient(String nom, String security_number, String address, int age) {
@@ -47,17 +47,24 @@ public class Hospital {
         return true;
     }
 
-    public void addPatient(Patient patient) {
-        this.patients.put(patient.getName(), patient);
+    public Patient addPatient(Patient patient) {
+        return this.patients.put(patient.getName(), patient);
     }
 
     public boolean specialityExists(String name)
     {
-        return hospitalDataBase.specialityExists(name);
+        Iterator<Speciality> it = specialities.iterator();
+        while (it.hasNext())
+        {
+            Speciality speciality = it.next();
+            if (speciality.getSpecialityName().contentEquals(name))
+                return true;
+        }
+        return false;
     }
 
     public Patient getPatientByName(String name)
     {
-        return  this.hospitalDataBase.getPatients().get(name);
+        return  this.patients.get(name);
     }
 }

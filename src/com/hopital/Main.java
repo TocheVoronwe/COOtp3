@@ -16,9 +16,9 @@ public class Main {
         while (true) {
             System.out.println("Entrer nom patient :");
             String str = scanner.nextLine();
-            System.out.println("Le super patient " + str);
             if (!hospital.checkIfPatientAlreadyExists(str))
                 hospital.addPatient(patientService.registerNewPatient());
+            System.out.println("test : " + hospital.getPatientByName(str));
             setUpResidenceCard(hospital, hospital.getPatientByName(str));
         }
     }

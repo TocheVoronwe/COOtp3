@@ -31,6 +31,8 @@ public class ResidenceCardService {
             addSpeciality = !str.isEmpty();
             if (addSpeciality && hospital.specialityExists(str))
                 services.add(str);
+            else
+                System.out.println("Spécialité inconnue");
         }
         return createResidenceCard(services, date);
     }
