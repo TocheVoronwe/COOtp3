@@ -1,8 +1,6 @@
 package HospitalFactory;
 
 import hospitalData.Patient;
-import hospitalData.ResidenceCard;
-import hospitalData.Speciality;
 
 import java.util.Scanner;
 

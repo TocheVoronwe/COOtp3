@@ -5,8 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ScoreCard {
-    List<Report> reports;
-    String speciality_name;
+    private List<Report> reports;
+    private String speciality_name;
 
     public ScoreCard(String speciality_name){
         this.reports = new ArrayList<>();
@@ -23,6 +23,14 @@ public class ScoreCard {
                 return report;
         }
         return null;
+    }
+
+    public List<Report> getReports() {
+        return reports;
+    }
+
+    public String getSpeciality_name() {
+        return speciality_name;
     }
 
     public boolean addReport(Report report)

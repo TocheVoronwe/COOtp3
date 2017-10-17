@@ -22,10 +22,14 @@ public class Main {
             setUpResidenceCard(hospital, hospital.getPatientByName(str));
         }
     }
-    private static boolean setUpResidenceCard(Hospital hospital, Patient patient)
-    {
+
+    private static boolean setUpResidenceCard(Hospital hospital, Patient patient) {
         ResidenceCardService residenceCardService = new ResidenceCardService();
-        patient.setResidenceCard(residenceCardService.setUpResidenceCard(hospital));
-        return (residenceCardService == null);
+        return hospital.addResidenceCardToPatient(patient, residenceCardService.setUpResidenceCard(hospital));
+/*        patient.setResidenceCard(residenceCardService.setUpResidenceCard(hospital));
+        return (residenceCardService == null);*/
+    }
+    private static boolean visitService(Hospital hospital, Patient patient){
+        return  true;
     }
 }
