@@ -1,6 +1,7 @@
 package hospitalData;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Patient {
@@ -56,5 +57,21 @@ public class Patient {
     public void deleteResidenceCard()
     {
         this.residenceCard = null;
+    }
+
+    public List<ScoreCard> getScoreCards() {
+        return scoreCards;
+    }
+
+    public ScoreCard getScoreCardByName(String specialityName)
+    {
+        Iterator<ScoreCard> it = scoreCards.iterator();
+        while (it.hasNext())
+        {
+            ScoreCard scoreCard = it.next();
+            if (scoreCard.getSpeciality_name().contentEquals(specialityName))
+                return scoreCard;
+        }
+        return  null;
     }
 }

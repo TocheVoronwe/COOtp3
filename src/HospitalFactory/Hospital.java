@@ -28,7 +28,7 @@ public class Hospital {
                 new ArrayList<String>(Arrays.asList(names4))));
 
         this.patients = new HashMap<>();
-/*        this.hospitalDataBase = new HospitalDataBase(patients, specialities);*/
+/*        this.hospitalData     Base = new HospitalDataBase(patients, specialities);*/
     }
 
     public Patient createPatient(String nom, String security_number, String address, int age) {
