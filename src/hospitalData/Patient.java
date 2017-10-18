@@ -54,6 +54,11 @@ public class Patient {
         this.residenceCard = residenceCard;
     }
 
+    public boolean haveAResidenceCard()
+    {
+        return this.residenceCard != null;
+    }
+
     public void deleteResidenceCard()
     {
         this.residenceCard = null;
@@ -73,5 +78,14 @@ public class Patient {
                 return scoreCard;
         }
         return  null;
+    }
+
+    public ResidenceCard getResidenceCard() {
+        return residenceCard;
+    }
+
+    public boolean addScoreCard(ScoreCard scoreCard)
+    {
+        return this.scoreCards.add(scoreCard);
     }
 }

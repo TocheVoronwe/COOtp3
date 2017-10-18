@@ -11,13 +11,12 @@ public class PatientService {
         return new Patient(name, security_number, address, age);
     }
 
-    public Patient registerNewPatient()
+    public Patient registerNewPatient(String name)
     {
-        String name, security_number, adress;
+        String security_number, adress;
         int age;
+        System.out.println("Enregistrement de " + name);
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nom");
-        name = scanner.nextLine();
         System.out.println("Numéro de sécurité sociale");
         security_number = scanner.nextLine();
         System.out.println("Addresse");

@@ -67,4 +67,15 @@ public class Hospital {
     {
         return  this.patients.get(name);
     }
+
+    public Speciality getSpecialityByName(String name){
+        Iterator<Speciality> it = specialities.iterator();
+        while (it.hasNext())
+        {
+            Speciality speciality = it.next();
+            if (speciality.getSpecialityName().contentEquals(name))
+                return speciality;
+        }
+        return null;
+    }
 }
