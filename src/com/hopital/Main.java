@@ -44,7 +44,7 @@ public class Main {
     }
 
     private static void endVisit(Patient patient) {
-        System.out.println("Le patient " + patient.getName() + "n'a plus de consultations, suppresion de sa fiche de séjour");
+        System.out.println("Le patient " + patient.getName() + " n'a plus de consultations, suppression de sa fiche de séjour");
         patient.deleteResidenceCard();
     }
 }
