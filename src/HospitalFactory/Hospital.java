@@ -1,23 +1,25 @@
 package HospitalFactory;
 
-import hospitalData.*;
+import hospitalData.Patient;
+import hospitalData.ResidenceCard;
+import hospitalData.ScoreCard;
+import hospitalData.Speciality;
 
 import java.util.*;
 
 public class Hospital {
     private List<Speciality> specialities;
     private Map<String, Patient> patients;
-    private HospitalDataBase hospitalDataBase;
 
     public Hospital() {
-        String[] names1 = {"patrick", "jean", "plop", "ploup"};
-        String[] names2 = {"canard", "pingouin", "knarf"};
-        String[] names3 = {"jkj", "jfk", "paté"};
-        String[] names4 = {"ramon", "jamon", "jambon", "ham"};
+        String[] names1 = {"Ledoux", "Lebrun", "Lelong", "Lecourt"};
+        String[] names2 = {"Lecarré", "Lerectangle", "Letriangle"};
+        String[] names3 = {"Ledodu", "Legras", "Lemaigre"};
+        String[] names4 = {"Legrand", "Lemoyen", "Lepetit", "Lenain"};
         specialities = new ArrayList<>();
         specialities.add(new Speciality("Cardiologie",
                 new ArrayList<String>(Arrays.asList(names1))));
-        specialities.add(new Speciality("Scientologie",
+        specialities.add(new Speciality("Cancerologie",
                 new ArrayList<String>(Arrays.asList(names2))));
         specialities.add(new Speciality("Hématologie",
                 new ArrayList<String>(Arrays.asList(names3))));
@@ -25,7 +27,6 @@ public class Hospital {
                 new ArrayList<String>(Arrays.asList(names4))));
 
         this.patients = new HashMap<>();
-/*        this.hospitalData     Base = new HospitalDataBase(patients, specialities);*/
     }
 
     public Patient createPatient(String nom, String security_number, String address, int age) {
