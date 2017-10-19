@@ -11,7 +11,6 @@ public class ResidenceCardService {
     }
 
     public ResidenceCard createResidenceCard(List<String> specialities, String entry_date) {
-
         return new ResidenceCard(specialities, entry_date);
     }
 
@@ -31,7 +30,7 @@ public class ResidenceCardService {
             addSpeciality = !str.isEmpty();
             if (addSpeciality && hospital.specialityExists(str))
                 services.add(str);
-            else
+            else if (str.length() != 0)
                 System.out.println("Spécialité inconnue");
         }
         return createResidenceCard(services, date);

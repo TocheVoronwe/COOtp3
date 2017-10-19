@@ -27,6 +27,10 @@ public class ResidenceCard {
         return it.hasNext();
     }
 
+    public List<String> getSpecialityList() {
+        return specialityList;
+    }
+
     public String nextSpeciality()
     {
             String speciality = it.next();
@@ -36,5 +40,9 @@ public class ResidenceCard {
     public boolean addSpeciality(String name)
     {
         return this.specialityList.add(name);
+    }
+
+    public String getEntry_date() {
+        return entry_date;
     }
 }

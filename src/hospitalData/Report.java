@@ -12,9 +12,8 @@ public class Report {
         this.report = report;
     }
 
-    Report getReport()
-    {
-        return this;
+    public String getReport() {
+        return report;
     }
 
     String getDate()

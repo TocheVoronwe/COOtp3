@@ -1,9 +1,6 @@
 package HospitalFactory;
 
-import hospitalData.HospitalDataBase;
-import hospitalData.Patient;
-import hospitalData.ResidenceCard;
-import hospitalData.Speciality;
+import hospitalData.*;
 
 import java.util.*;
 
@@ -24,7 +21,7 @@ public class Hospital {
                 new ArrayList<String>(Arrays.asList(names2))));
         specialities.add(new Speciality("Hématologie",
                 new ArrayList<String>(Arrays.asList(names3))));
-        specialities.add(new Speciality("Cardiologie",
+        specialities.add(new Speciality("Rhumatologie",
                 new ArrayList<String>(Arrays.asList(names4))));
 
         this.patients = new HashMap<>();
@@ -42,6 +39,11 @@ public class Hospital {
     public boolean addResidenceCardToPatient(Patient patient, ResidenceCard residenceCard) {
         if (!this.patients.containsKey(patient.getName()))
             return false;
+        residenceCard.getSpecialityList().forEach( speciality ->
+        {
+            if (patient.getScoreCardByName(speciality) == null)
+                patient.addScoreCard(new ScoreCard(speciality));
+        });
         patient.setResidenceCard(residenceCard);
         this.patients.put(patient.getName(), patient);
         return true;

@@ -23,12 +23,28 @@ public class Main {
             if (!hospital.getPatientByName(name).haveAResidenceCard())
                 setUpResidenceCard(hospital, hospital.getPatientByName(name));
             if (hospital.getPatientByName(name).getResidenceCard().hasAnotherConsultation())
-                visitService(hospital, hospital.getPatientByName(name), hospital.getPatientByName(name)
-                        .getResidenceCard().nextSpeciality());
+                visitService(hospital,
+                        hospital.getPatientByName(name).getResidenceCard().nextSpeciality());
             else
                 endVisit(hospital.getPatientByName(name));
 
         }
+    }
+
+    private static boolean entry(Hospital hospital) {
+        return true;
+    }
+
+    private static boolean visualization(Hospital hospital) {
+        return true;
+    }
+
+    private static boolean consultation(Hospital hospital) {
+        return true;
+    }
+
+    private static boolean exit(Hospital hospital) {
+        return true;
     }
 
     private static boolean setUpResidenceCard(Hospital hospital, Patient patient) {
@@ -37,10 +53,10 @@ public class Main {
         return hospital.addResidenceCardToPatient(patient, residenceCardService.setUpResidenceCard(hospital));
     }
 
-    private static boolean visitService(Hospital hospital, Patient patient, String specialityName) {
+    private static boolean visitService(Hospital hospital, String specialityName) {
         SpecialityService specialityService = new SpecialityService();
 
-        return specialityService.patientVisit(patient, hospital.getSpecialityByName(specialityName));
+        return specialityService.patientVisit(hospital, hospital.getSpecialityByName(specialityName));
     }
 
     private static void endVisit(Patient patient) {
