@@ -1,0 +1,34 @@
+Lancer le programme
+
+1 : Création patient
+
+nom : jean
+numéro de sécurité sociale : 4665
+adresse : 12
+age : 12
+
+Fiche de séjour:
+Date : 1994-12-21
+Spécialité : Hématologie
+Spécialité : Cancerologie
+Spécialité : \n
+
+2: Visualisation d'un séjour:
+Patient: jean
+Rien à afficher
+
+3 : consultation
+Service : Hématologie
+Praticien : Ledodu
+Patient: jean
+
+Corps : Jean a des hématomes
+
+2: visualisation
+Patient: jean
+Hématologie:
+Date : 1994-12-21 Praticien : Ledodu Corps : Jean a des hématomes
+
+4: Sortie
+Patient: jean
+Suppression.
