@@ -32,21 +32,6 @@ public class SpecialityService {
         }
         printReports(hospital, patient, speciality);
         return createReport(hospital, patient, speciality, practicienName);
-/*        date = patient.getResidenceCard().getEntry_date();
-        System.out.println("Corps");
-        corps = scanner.nextLine();
-        if (date.length() <= 0 || corps.length() <= 0)
-            return false;
-        //TODO : check if scorecard exists before adding report
-        scoreCard = patient.getScoreCardByName(speciality.getSpecialityName());
-        if (scoreCard == null) {
-            scoreCard = new ScoreCard(speciality.getSpecialityName());
-            if (!patient.addScoreCard(scoreCard))
-                return false;
-        }
-        patient.getScoreCardByName(speciality.getSpecialityName())
-                .addReport(new Report(practicienName, date, corps));
-        return true;*/
     }
 
     public boolean createReport(Hospital hospital, Patient patient, Speciality speciality, String practicienName) {
@@ -70,8 +55,7 @@ public class SpecialityService {
     public void printReports(Hospital hospital, Patient patient, Speciality speciality) {
         System.out.println("Rapport déjà existants pour la spécialité " + speciality.getSpecialityName());
         ScoreCard scoreCard = patient.getScoreCardByName(speciality.getSpecialityName());
-        if (scoreCard == null)
-        {
+        if (scoreCard == null) {
             System.out.println("Aucun rapport existant");
             return;
         }
